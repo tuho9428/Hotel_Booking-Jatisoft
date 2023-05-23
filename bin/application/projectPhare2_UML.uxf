@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<diagram program="umlet" version="15.1.0">
+  <help_text/>
+  <zoom_level>6</zoom_level>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>462</x>
+      <y>66</y>
+      <w>66</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>90.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>66</x>
+      <y>6</y>
+      <w>402</w>
+      <h>168</h>
+    </coordinates>
+    <panel_attributes>BookingSystem
+--
+
+	- availableRooms: List&lt;Room&gt;
+	- bookedRooms : List&lt;Room&gt;
+	- bookings : List&lt;Reservation&gt;
+	- guest : List&lt;Guest&gt;
+	
+--
+
++ getAvailableRooms() : List&lt;Room&gt;
++ checkAvailability(checkInDate : LocalDate, checkOutDate : LocalDate) : void
++ bookRoom(room : Room, guest : Guest, checkInDate : LocalDate, checkOutDate : LocalDate) : String
++ generateBookingNumber() : String
++ retrieveBookingDetails(bookingNumber : String) : Reservation
++ retrieveGuestDetails(bookingNumber : String) : String
++ removeRoom(room : Room) : void</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>516</x>
+      <y>0</y>
+      <w>246</w>
+      <h>162</h>
+    </coordinates>
+    <panel_attributes>ExistingReservation
+--
+
+	- reservationNumber : String
+	- room : Room
+	- totalPrice : double
+	
+--
+
++ setReservationNumber(reservationNumber : String ) : void
++ getReservationNumber() : String 
++ setRoom(room : Room) : void
++ getRoom() : Room
++ setTotalPrice(totalPrice : double) : void 
++ getTotalPrice() : double
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>828</x>
+      <y>42</y>
+      <w>198</w>
+      <h>228</h>
+    </coordinates>
+    <panel_attributes>Guest
+--
+
+	- prefix : String
+	- firstName : String
+	- middleInitial : String
+	- lastName : String
+	- phoneNumber : String
+	- emailAddress : String
+	
+--
++ getPrefix() : String
++ setPrefix(prefix : String) : void
++ getFirstName() : String
++ setFirstName(firstName : String) : void
++ getMiddleInitial() : String
++ setMiddleInitial(middleInitial : String) : void 
++ getLastName() : String
++ setLastName(lastName : String) : void 
++ getPhoneNumber() : String
++ setPhoneNumber(phoneNumber : String) : void
++ getEmailAddress() : String
++ setEmailAddress(emailAddress : String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>756</x>
+      <y>108</y>
+      <w>84</w>
+      <h>18</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>120.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>750</x>
+      <y>150</y>
+      <w>90</w>
+      <h>126</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>130.0;10.0;30.0;10.0;30.0;190.0;10.0;190.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>636</x>
+      <y>156</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;70.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>588</x>
+      <y>156</y>
+      <w>18</w>
+      <h>54</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;70.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>396</x>
+      <y>168</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>10.0;10.0;10.0;90.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>342</x>
+      <y>168</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>18</x>
+      <y>60</y>
+      <w>240</w>
+      <h>396</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>380.0;640.0;10.0;640.0;10.0;10.0;80.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>72</x>
+      <y>222</y>
+      <w>396</w>
+      <h>138</h>
+    </coordinates>
+    <panel_attributes>EmailSender
+--
+
+	- emailServer : String
+	- emailPort : int
+	- username : String
+	- password : String 
+
+--
+
++ sendEmail(to : String, bookingNumber : String) : void
+- prepareMessage(session : Session, myEmail : String, to : String, bookingNumber : String) : Message
++ setServer(server : String, port : int) : void 
++ setCredentials(username : String, password : String) : void
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>336</x>
+      <y>354</y>
+      <w>18</w>
+      <h>48</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;..</panel_attributes>
+    <additional_attributes>10.0;60.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>246</x>
+      <y>390</y>
+      <w>168</w>
+      <h>180</h>
+    </coordinates>
+    <panel_attributes>RoomReservation
+--
+
+	- room : Room
+	- adults : int
+	- children : int
+	- totalPrice : double
+	
+--
+
++ setRoom(room : Room) : void 
++ getRoom() : Room
++ setAdults(adults : int) : void 
++ getAdults() : int
++ setChildren(children : int) : void
++ getChildren() : int
++ setTotalPrice(totalPrice : double) : void
++ getTotalPrice() : double</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>300</y>
+      <w>108</w>
+      <h>144</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;220.0;160.0;220.0;160.0;10.0;100.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>528</x>
+      <y>198</y>
+      <w>228</w>
+      <h>204</h>
+    </coordinates>
+    <panel_attributes>Reservation
+--
+
+	- checkInDate : LocalDate
+	- checkOutDate : LocalDate
+	- guest : Guest
+	- reservationNumber : String
+	
+--
+
++ setCheckInDate(date : LocalDate) : void
++ setCheckOutDate(date : LocalDate) : void 
++ setGuest(guest : Guest) : void
++ getCheckInDate() : LocalDate
++ getCheckOutDate() : LocalDate
++ getGuest() : Guest
++ generateBookingNumber() : String 
++ toString() : String
++ setReservationNumber(bookingNumber : String) : void
++ getReservationNumber() : String
+</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>822</x>
+      <y>318</y>
+      <w>216</w>
+      <h>246</h>
+    </coordinates>
+    <panel_attributes>Address
+--
+
+-  country : String 
+-  address1 : String
+-  address2 : String
+-  city : String
+-  zipCode : String
+-  additionalDetails : String
+
+--
+
++ getCountry() : String
++ setCountry(country : String) : void
++ getAddress1() : String
++ setAddress1(address1 : String) : void
++ getAddress2() : String 
++ setAddress2(address2 : String) : void
++ getCity() : String 
++ setCity(city : String) : void
++ getZipCode(): String
++ setZipCode(zipCode : String) : void
++ getAdditionalDetails() : String
++ setAdditionalDetails(additionalDetails : String) : void
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>924</x>
+      <y>264</y>
+      <w>18</w>
+      <h>66</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;&lt;&lt;&lt;-</panel_attributes>
+    <additional_attributes>10.0;90.0;10.0;10.0</additional_attributes>
+  </element>
+  <element>
+    <id>UMLClass</id>
+    <coordinates>
+      <x>504</x>
+      <y>456</y>
+      <w>300</w>
+      <h>222</h>
+    </coordinates>
+    <panel_attributes>Room
+--
+
+	- roomNumber : String
+	- roomType : String
+	- price : double
+	- availabilityStatus : String
+	
+--
+
++ isAvailable() : boolean 
++ isAvailable(checkInDate : LocalDate, checkOutDate : LocalDate) : boolean
++ getDetails() : String
++ setRoomNumber(roomNumber : String) : void
++ getRoomNumber() : String
++ setRoomType(roomType : String) : void
++ getRoomType() : String
++ setPrice(price : double) : void 
++ getPrice() : double
++ setAvailabilityStatus(availabilityStatus : String) : void
++ getAvailabilityStatus() : String
++ toString() : String</panel_attributes>
+    <additional_attributes/>
+  </element>
+  <element>
+    <id>Relation</id>
+    <coordinates>
+      <x>408</x>
+      <y>486</y>
+      <w>108</w>
+      <h>90</h>
+    </coordinates>
+    <panel_attributes>lt=&lt;-</panel_attributes>
+    <additional_attributes>160.0;130.0;100.0;130.0;100.0;10.0;10.0;10.0</additional_attributes>
+  </element>
+</diagram>

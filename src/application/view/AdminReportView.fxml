@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane prefHeight="600.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminReportController">
+    <TableView fx:id="bookingTableView" layoutX="14.0" layoutY="37.0" prefHeight="500.0" prefWidth="712.0">
+        <columns>
+            <TableColumn fx:id="guestIdColumn" prefWidth="62.399930000305176" text="Guest ID" />
+         	<TableColumn fx:id="guestNameColumn" prefWidth="103.99999237060547" text="Guest Name" />
+            <TableColumn fx:id="bookingIdColumn" prefWidth="70.4000244140625" text="Booking ID" />
+            <TableColumn fx:id="adultsColumn" prefWidth="43.20002746582031" text="Adults" />
+            <TableColumn fx:id="childrenColumn" prefWidth="53.60003662109375" text="Children" />
+            <TableColumn fx:id="checkInDateColumn" prefWidth="84.0" text="Check-in Date" />
+            <TableColumn fx:id="checkOutDateColumn" prefWidth="95.199951171875" text="Check-out Date" />
+            <TableColumn fx:id="roomNumberColumn" prefWidth="92.0" text="Room Number" />
+            <TableColumn fx:id="bookingNumberColumn" prefWidth="105.5999755859375" text="Booking Number" />
+        </columns>
+    </TableView>
+   <Button fx:id="OutButton" layoutX="603.0" layoutY="543.0" mnemonicParsing="false" onAction="#handleSignOutButton" prefHeight="36.0" prefWidth="105.0" text="Exit" />
+</AnchorPane>

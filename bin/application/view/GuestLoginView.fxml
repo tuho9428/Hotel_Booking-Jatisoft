@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GuestLoginController">
+   <children>
+      <Text fill="#e10606" layoutX="232.0" layoutY="73.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Guest Login">
+         <font>
+            <Font name="Calibri Italic" size="24.0" />
+         </font>
+      </Text>
+      <Text layoutX="140.0" layoutY="143.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Username" />
+      <Text layoutX="142.0" layoutY="196.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" />
+      <TextField fx:id="user" layoutX="208.0" layoutY="126.0" promptText="Username" />
+      <Button fx:id="SignInButton" layoutX="256.0" layoutY="245.0" mnemonicParsing="false" onAction="#handleSignInButton" text="Sign in" />
+      <Text layoutX="231.0" layoutY="308.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Don't have account!" />
+      <Button fx:id="RegisterButton" layoutX="253.0" layoutY="330.0" mnemonicParsing="false" onAction="#handleRegisterButton" text="Register" />
+      <PasswordField fx:id="pass" layoutX="208.0" layoutY="179.0" promptText="Password" />
+      <Text layoutX="271.0" layoutY="229.0" strokeType="OUTSIDE" strokeWidth="0.0" />
+      <Text fx:id="line" layoutX="162.0" layoutY="228.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="292.60003662109375" />
+      <Button fx:id="BackButton" layoutX="416.0" layoutY="352.0" mnemonicParsing="false" onAction="#handleBackButton" prefHeight="20.0" prefWidth="59.0" text="back" />
+      <DialogPane layoutX="12.0" />
+   </children>
+</AnchorPane>

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.GuestPageController">
+   <children>
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0">
+         <children>
+            <Text layoutX="203.0" layoutY="92.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Here is your information">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+            <Button fx:id="SignOutButton" layoutX="470.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleSignOutButton" text="Sign out" />
+            <Button fx:id="DashBoardButton" layoutX="71.0" layoutY="324.0" mnemonicParsing="false" onAction="#handleDashBoardButton" text="DashBoard" />
+            <Text fx:id="userInfo" layoutX="210.0" layoutY="144.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
