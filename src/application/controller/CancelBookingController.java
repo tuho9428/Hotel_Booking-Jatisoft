@@ -31,7 +31,7 @@ public class CancelBookingController extends Application {
 
     private static final String DB_URL = "jdbc:mysql://localhost:3306/hotel";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "123465";
+    private static final String PASSWORD = "5alasomot";
 
     @FXML
     private void cancelBooking(ActionEvent event) {

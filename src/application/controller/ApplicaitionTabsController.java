@@ -25,6 +25,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Insets;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
@@ -51,7 +52,7 @@ public class ApplicaitionTabsController extends Application {
 	private static Connection connection;
 	private static final String DB_URL = "jdbc:mysql://localhost:3306/hotel";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "123465";
+    private static final String PASSWORD = "5alasomot";
 	static final String QUERY = "SELECT * FROM guestlogin WHERE username=? AND password=?";
 	static final String QUERY1 = "SELECT * FROM guestlogin WHERE username=? AND guest_id=?";
 	private static final String SQL_INSERT = "INSERT INTO booking(aldutNum, childNum, checkindate, checkoutdate,guest_id) VALUES(?,?,?,?,?)";
@@ -61,6 +62,7 @@ public class ApplicaitionTabsController extends Application {
     private static int childNum;
     private static LocalDate checkIn;
     private static LocalDate checkOut;
+    private static Guest guest1;
 	@FXML
 	private Button SignInButton;
 	@FXML
@@ -288,7 +290,7 @@ public class ApplicaitionTabsController extends Application {
     public boolean isRoomAvailable(Room room, LocalDate checkInDate, LocalDate checkOutDate) {
         //
     	try {
-    	    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "123465");
+    	    Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "5alasomot");
     	    // Assign the connection to the appropriate field or variable in your class
     	    ApplicaitionTabsController.connection = connection;
     	} catch (SQLException e) {
@@ -393,8 +395,12 @@ public class ApplicaitionTabsController extends Application {
 	        }
 	        for (Room room : filterRoom) {
 	        	if (isRoomAvailable(room, checkIn, checkOut)) {
-	                Label roomLabel = new Label(room.getRoomNumber() + " (" + room.getRoomType() + ")");
+	                Label roomLabel = new Label("Number: " + room.getRoomNumber() + 
+	                							"\nType: " + room.getRoomType() + 
+	                							"\nPrice: " + room.getPrice());
+	                roomLabel.setStyle("-fx-font-size: 12px; -fx-spacing: 14px;");
 	                Button bookButton = new Button("Book");
+	                bookButton.setStyle("-fx-font-size: 12px; -fx-spacing: 14px;");
 	                bookButton.setOnAction(e -> {
 	                    // Handle button action here
 	                	tab6.setDisable(false);
@@ -431,6 +437,8 @@ public class ApplicaitionTabsController extends Application {
 	    						+ " and booking ID: " + booking_id );
 	                });
 	                HBox roomBox = new HBox(roomLabel, bookButton);
+	                roomBox.setSpacing(10); // Set the spacing between the nodes
+                    roomBox.setPadding(new Insets(10)); // Set padding around the container
 	                roomContainer.getChildren().add(roomBox);
 	            }	
 	        }
@@ -450,7 +458,7 @@ public class ApplicaitionTabsController extends Application {
 	public static void ConnectSQL() {
         try {
             connection =
-            DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "123465");
+            DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "5alasomot");
             System.out.println("Connected With the database successfully");
             // Creating PreparedStatement object
             PreparedStatement preparedStatement = connection.prepareStatement(SQL_INSERT);
@@ -521,22 +529,22 @@ public class ApplicaitionTabsController extends Application {
 	public static void ConnectSQL2() {
 		int bookingID = getBookingID();
 	    try {
-	        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "123465");
+	        connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "5alasomot");
 	        System.out.println("Connected With the database successfully");
 	        // Creating PreparedStatement object
 	        PreparedStatement preparedStatement1 = connection.prepareStatement(SQL_INSERT1);
 	        PreparedStatement preparedStatement2 = connection.prepareStatement(SQL_INSERT2);
 	        // Setting values for Each Parameter
-	        preparedStatement1.setString(1, guest.getPrefix());
-	        preparedStatement1.setString(2, guest.getFirstName());
-	        if (guest.getMiddleInitial() != null && !guest.getMiddleInitial().isEmpty()) {
-	            preparedStatement1.setString(3, guest.getMiddleInitial());
+	        preparedStatement1.setString(1, guest1.getPrefix());
+	        preparedStatement1.setString(2, guest1.getFirstName());
+	        if (guest1.getMiddleInitial() != null && !guest1.getMiddleInitial().isEmpty()) {
+	            preparedStatement1.setString(3, guest1.getMiddleInitial());
 	        } else {
 	            preparedStatement1.setNull(3, Types.VARCHAR);
 	        }
-	        preparedStatement1.setString(4, guest.getLastName());
-	        preparedStatement1.setString(5, guest.getPhoneNumber());
-	        preparedStatement1.setString(6, guest.getEmailAddress());
+	        preparedStatement1.setString(4, guest1.getLastName());
+	        preparedStatement1.setString(5, guest1.getPhoneNumber());
+	        preparedStatement1.setString(6, guest1.getEmailAddress());
 	        preparedStatement1.setInt(7, bookingID);
 
 	        preparedStatement2.setString(1, address.getCountry());
@@ -594,7 +602,7 @@ public class ApplicaitionTabsController extends Application {
 		String lastName = lname.getText();
 		String phoneNumber = phone.getText();
 		String emailAddress = email.getText();
-		guest = new Guest(prefix, firstName, middleInitial, lastName, phoneNumber, emailAddress, address);	
+		guest1 = new Guest(prefix, firstName, middleInitial, lastName, phoneNumber, emailAddress, address);	
 
 		if(prefix.isEmpty() || firstName.isEmpty() || lastName.isEmpty() || phoneNumber.isEmpty() || emailAddress.isEmpty()
 				|| country1.isEmpty() || ad1.isEmpty() || cty.isEmpty() || zipCode.isEmpty() ) {
@@ -609,8 +617,9 @@ public class ApplicaitionTabsController extends Application {
 		}
 
         int bookingId = getBookingID();
+        System.out.println("Here is your id: " + bookingId);
         //tab7
-    	Guest guest1 = getGuestInfo(retrieveData(QUERY6,bookingId));
+    	guest1 = getGuestInfo(retrieveData(QUERY6,bookingId));
     	Address address1 = getAddress(retrieveData(QUERY7,bookingId));
     	int room_num = getRoomNum(retrieveData(QUERY8,bookingId));
     	Date dateIn = getDateIn(retrieveData(QUERY8,bookingId));
@@ -778,6 +787,7 @@ public class ApplicaitionTabsController extends Application {
    public Date getDateIn(ResultSet resultSet) throws SQLException {
        if (resultSet.next()) {
            Date checkindate = resultSet.getDate("checkindate");
+           //System.out.println("Hello");
 
             return checkindate;
        }
@@ -800,7 +810,7 @@ public class ApplicaitionTabsController extends Application {
 	   tab8.setDisable(false);
 	   tp.getSelectionModel().select(tab8);
 	   String booking_num = BookingSystem.generateBookingNumber();
-	   Guest guest1 = getGuestInfo(retrieveData(QUERY6,bookingID));
+	   //guest1 = getGuestInfo(retrieveData(QUERY6,bookingID));
 	   String str =  "An Confirmation email has sent to \nyour email: " + guest1.getEmailAddress();
 	   bookingNum.setText(str + "\nYour boking number is: " + booking_num);
 	   System.out.println(booking_num);

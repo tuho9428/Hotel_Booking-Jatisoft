@@ -99,7 +99,7 @@ public class GuestLoginController extends Application {
 	public static void ConnectSQL() {
 		try {
 			connection =
-			DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "123465");
+			DriverManager.getConnection("jdbc:mysql://localhost:3306/hotel", "root", "5alasomot");
 			System.out.println("Connected With the database successfully");
 		} catch (SQLException e) {
 			System.out.println("Error while connecting to the database");

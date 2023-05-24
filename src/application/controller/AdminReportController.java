@@ -27,7 +27,7 @@ import javafx.scene.control.cell.PropertyValueFactory;
 public class AdminReportController extends Application {
     private static final String DB_URL = "jdbc:mysql://localhost:3306/hotel";
     private static final String USERNAME = "root";
-    private static final String PASSWORD = "123465";
+    private static final String PASSWORD = "5alasomot";
 	private static final String QUERY6 = "SELECT * FROM guest";
 
     @FXML
