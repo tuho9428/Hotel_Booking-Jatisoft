@@ -32,8 +32,8 @@ public class AdminReportController extends Application {
 
     @FXML
     private TableView<Booking> bookingTableView;
-    @FXML
-    private TableColumn<Booking, String> guestNameColumn;
+    /*@FXML
+    private TableColumn<Booking, String> guestNameColumn;*/
     @FXML
     private TableColumn<Booking, String> guestIdColumn;
     @FXML
@@ -93,7 +93,7 @@ public class AdminReportController extends Application {
         checkOutDateColumn.setCellValueFactory(new PropertyValueFactory<>("checkOutDate"));
         roomNumberColumn.setCellValueFactory(new PropertyValueFactory<>("roomNumber"));
         bookingNumberColumn.setCellValueFactory(new PropertyValueFactory<>("bookingNumber"));
-        guestNameColumn.setCellValueFactory(new PropertyValueFactory<>("guestName"));
+        //guestNameColumn.setCellValueFactory(new PropertyValueFactory<>("guestName"));
 
         try {
             // Establish the database connection
@@ -118,13 +118,13 @@ public class AdminReportController extends Application {
                 Date checkOutDate = resultSet.getDate("checkoutdate");
                 int roomNumber = resultSet.getInt("room_num");
                 int bookingNumber = resultSet.getInt("booking_num");
-                Guest guest1 = getGuestInfo(retrieveData(QUERY6,bookingId));
+                /*Guest guest1 = getGuestInfo(retrieveData(QUERY6,bookingId));
                 String  fname = guest1.getFirstName();
                 String lname = guest1.getLastName(); 
-                String guestName = fname +" " + lname;
+                String guestName = fname +" " + lname;*/
 
                 Booking booking = new Booking( guestId, bookingId, adults, children, checkInDate, checkOutDate,
-                        roomNumber, bookingNumber, guestName);
+                        roomNumber, bookingNumber);
                 bookings.add(booking);
             }
             // Close the resources
@@ -181,7 +181,7 @@ public class AdminReportController extends Application {
         private String guestName;
 
         public Booking(String guestId, int bookingId, int adults, int children, Date checkInDate, Date checkOutDate,
-                int roomNumber, int bookingNumber, String guestName) {
+                int roomNumber, int bookingNumber) {
         	
             this.guestId = guestId;
             this.bookingId = bookingId;
@@ -191,7 +191,7 @@ public class AdminReportController extends Application {
             this.checkOutDate = checkOutDate;
             this.roomNumber = roomNumber;
             this.bookingNumber = bookingNumber;
-            this.guestName = guestName;
+            //this.guestName = guestName;
         }
 
         public String getGuestId() {

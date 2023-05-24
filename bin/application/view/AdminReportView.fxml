@@ -9,7 +9,6 @@
     <TableView fx:id="bookingTableView" layoutX="14.0" layoutY="37.0" prefHeight="500.0" prefWidth="712.0">
         <columns>
             <TableColumn fx:id="guestIdColumn" prefWidth="62.399930000305176" text="Guest ID" />
-         	<TableColumn fx:id="guestNameColumn" prefWidth="103.99999237060547" text="Guest Name" />
             <TableColumn fx:id="bookingIdColumn" prefWidth="70.4000244140625" text="Booking ID" />
             <TableColumn fx:id="adultsColumn" prefWidth="43.20002746582031" text="Adults" />
             <TableColumn fx:id="childrenColumn" prefWidth="53.60003662109375" text="Children" />

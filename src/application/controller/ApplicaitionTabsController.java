@@ -113,7 +113,7 @@ public class ApplicaitionTabsController extends Application {
 	private VBox roomContainer;
 	@FXML
 	private Button BackButton2;
-	private static Guest guest;
+	//private static Guest guest;
 	private static Address address;
 	private static final String SQL_INSERT1 = "INSERT INTO guest(pf, fname, mname, lname, phone, email, booking_id) VALUES(?,?,?,?,?,?,?)";
 	private static final String SQL_INSERT2 = "INSERT INTO address(country, ad1, ad2, cty, zipcode, detail, booking_id) VALUES(?,?,?,?,?,?,?)";
