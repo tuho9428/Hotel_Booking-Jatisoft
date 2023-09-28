@@ -41,7 +41,7 @@ public class RunApplicationController extends Application {
 	        Stage stage = new Stage();
 	        stage.setScene(scene);
 	        stage.show();
-	        
+	        // cmt
 	        Stage primaryStage = (Stage) AdminButton.getScene().getWindow();
             primaryStage.close();
 	    } catch (IOException e) {
