@@ -1,5 +1,6 @@
 # Hotel_Booking-Jatisoft
 Author: Jake Tran and Tu Ho
+
 This application helps users book a room at our hotel and save the user information in the database
 
 
