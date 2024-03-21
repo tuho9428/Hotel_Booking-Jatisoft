@@ -40,7 +40,6 @@ Administrators have additional privileges:
 ## Features
 
 - Streamlined reservation process
-- Automated email notifications for guests
 - User-friendly interface
 - Efficient management of reservations and guest information
 - Comprehensive administrative capabilities
