@@ -2,7 +2,8 @@
 
 ## Introduction
 
-Jatisoft is a comprehensive booking system designed to streamline the reservation process for hotels and other accommodation providers. The application allows users to manage existing reservations, handle guest information, send automated emails, and handle various aspects of room reservations.
+Jatisoft is a comprehensive booking system designed to streamline the reservation process for hotels and other accommodation providers. The application follows the MVC (Model-View-Controller) architecture, separating the data (Model), presentation (View), and application logic (Controller) layers.
+The application allows users to manage existing reservations, handle guest information, send automated emails, and handle various aspects of room reservations.
 
 ![App](screenshots/home.png)
 
