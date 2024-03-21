@@ -1,30 +1,77 @@
-# Hotel_Booking-Jatisoft
-hello
-# Hotel Booking App README
+# Jatisoft Hotel Booking Application
 
 ## Introduction
 
-Welcome to our Hotel Booking App! This README file provides a concise overview of the app, its features, and instructions on how to get started.
+Jatisoft is a comprehensive booking system designed to streamline the reservation process for hotels and other accommodation providers. The application allows users to manage existing reservations, handle guest information, send automated emails, and handle various aspects of room reservations.
 
-## Features
+![Main Interface](screenshots/main-interface.png)
 
-- **User-Friendly**: Our app offers easy hotel booking with real-time availability, secure payments, and user reviews.
-Using Java, GUI, Scence Builder,  JavaFX and MySQL.
+## Getting Started
+
+To run the Jatisoft Booking App, follow these steps:
+
+1. Clone the repository: git clone https://github.com/tuho9428/JatisoftBooking.git
+2. Navigate to the cloned directory: cd JatisoftBooking
+3. Execute the main java file: JatisoftApp.java
+
 
 ## Usage
 
-1. Sign up or log in.
+### Regular User
 
-2. Search and book hotels.
+Regular users can:
 
-3. Hotel owners manage listings via the admin dashboard.
+- Make new reservations
+- Modify existing reservations
+- View booking history
+- Update personal information
+
+**Regular User Credentials:**
+- Username: user1
+- Password: 1234
+
+### Administrator
+
+Administrators have additional privileges:
+
+- Manage room availability
+- Handle guest requests
+- Generate reports
+- Access the entire guest database
+- Add or modify rooms
+
+**Administrator Credentials:**
+- Username: admin
+- Password: 123
+
+## Features
+
+- Streamlined reservation process
+- Automated email notifications for guests
+- User-friendly interface
+- Efficient management of reservations and guest information
+- Comprehensive administrative capabilities
+
+## Demo Screenshots
+
+### Reservation Form
+![Reservation Form](screenshots/reservation-form.png)
+
+### Report Generation
+![Report Generation](screenshots/report-generation.png)
 
 ## Contributing
 
-We welcome contributions. 
+If you'd like to contribute to Jatisoft, please follow these steps:
 
-## Support
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/YourFeature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/YourFeature`)
+5. Create a new Pull Request
 
-For help, check latest version at our repo.
+## Contact
 
-Thank you for using our Hotel Booking App!
+For any inquiries or support, please contact [Tu Ho](mailto:ht@cwu.edu).
+
+
