@@ -27,10 +27,6 @@ Regular users can:
 - View booking history
 - Update personal information
 
-**Regular User Credentials:**
-- Username: user1
-- Password: 1234
-
 ### Administrator
 
 Administrators have additional privileges:
@@ -40,10 +36,6 @@ Administrators have additional privileges:
 - Generate reports
 - Access the entire guest database
 - Add or modify rooms
-
-**Administrator Credentials:**
-- Username: admin
-- Password: 123
 
 ## Features
 
